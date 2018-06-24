@@ -1,0 +1,23 @@
+s Please input a number
+#This is a sample bscript program which decides whether a given integer is a prime number
+n
+i 1
+a2 2
+t 1
+g3 v002*v002>v001
+a3 v001%v002
+g2 !v003
+a2 v002+1
+g1 1
+t 2
+n
+s The smallest prime divisor of 
+o 001
+s  is 
+o 002
+e
+t 3
+n
+o 001
+s  is a prime number.
+e
