@@ -1,3 +1,9 @@
+/*Author: lem-ma
+bscript
+Version 0.8beta
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -54,7 +60,6 @@ double getn(char* name)
 
 double parse(char* line)
 {
-	//printf("PARSING: %s\n",line);
 	int length=strlen(line);
 	int mode[2]={15,-1};
 	for(int i=0;i<length;i++)
@@ -334,10 +339,8 @@ int handle(char* agcommand, int j)
 			printf("Error occurs.\n\n%s",agcommand);
 			return 0;
 		}
-		//printf("HANDLING:%d\n%d\n%s\nENDHANDLING\n", mov, keyvenues[mov], agcommand);
 		if(agcommand[0]=='a')
 		{
-			//printf("This %s\n", agcommand);
 			v[mov]=parse(substring(agcommand, blank+1, length-1));
 			return 0;
 		}
@@ -391,21 +394,13 @@ int main(int argc, char* argv[])
 		int allocated_space=1024;
 		int cache=0;
 		int target;
-		//printf("%ld", lSize);
-		/*
-		0 ----normal
-		1 ----target
-		2 ----comment
-		*/
 		for(long i=0;i<=lSize;i++)
 		{
 			if(buffer[i]=='\n'&&!mode)
 			{
-				//normal
 				if(i&&buffer[i-1]!='\n')
 				{
 					commands[one_plus_nol]=substring(buffer, cache, i-1);
-					//printf("HAVEGOT: %s\n", commands[one_plus_nol]);
 					one_plus_nol++;
 					if(one_plus_nol%1024==0)
 					{
@@ -415,10 +410,6 @@ int main(int argc, char* argv[])
 						{
 							puts("Rendering error!");
 							free(buffer);
-							/*for(int i=1;i<one_plus_nol;i++)
-							{
-								printf("%s\n", commands[i]);
-							}*/
 							for(int i=0;i<one_plus_nol;i++)
 							{
 								free(commands[i]);
@@ -451,10 +442,6 @@ int main(int argc, char* argv[])
 						puts(substring(buffer, cache+1, i-1));
 						printf("ERROR: go keys can only be integers from 1 to 999!");
 						free(buffer);
-						/*for(int i=1;i<one_plus_nol;i++)
-						{
-							printf("%s\n", commands[i]);
-						}*/
 						for(int i=0;i<one_plus_nol;i++)
 						{
 							free(commands[i]);
@@ -508,15 +495,6 @@ int main(int argc, char* argv[])
 			}
 		}
 		free(buffer);
-		/*for(int i=1;i<one_plus_nol;i++)
-		{
-			printf("%s\n", commands[i]);
-		}
-		puts("TARGETS:");
-		for(int i=1;i<10;i++)
-		{
-			printf("%d|||||     %d\n", i, keyvenues[i]);
-		}*/
 		int length_of_commands;
 		int variable;
 		int i=0;
@@ -551,7 +529,6 @@ int main(int argc, char* argv[])
 					break;
 				case 'g':
 					i=handle(commands[i], i)-1;
-					//printf("GOING TO: %d\n",i);
 					break;
 				case 'o':
 					if(length_of_commands>1)
