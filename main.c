@@ -553,7 +553,8 @@ int main(int argc, char* argv[])
 				case 's':
 					if(length_of_commands>2)
 					{
-						printf("%s", substring(commands[i],2,length_of_commands-1));
+						int iswin=(commands[i][length_of_commands-1]=='\r');
+						printf("%s", substring(commands[i],2,length_of_commands-1-iswin));
 					}
 					else
 					{
