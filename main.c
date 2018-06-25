@@ -1,12 +1,11 @@
 /*Author: lem-ma
 bscript
-Version 0.8beta
+Version 0.8.2beta
 */
 
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include <math.h>
 #include <string.h>
 
@@ -390,6 +389,14 @@ int main(int argc, char* argv[])
 		char** commands=(char**)malloc(sizeof(char*)*1024);
 		commands[0]="e"; 
 		int mode=0;
+		if(buffer[0]=='t')
+		{
+			mode=1;
+		}
+		else if(buffer[0]=='#')
+		{
+			mode=2;
+		}
 		int one_plus_nol=1;
 		int allocated_space=1024;
 		int cache=0;
