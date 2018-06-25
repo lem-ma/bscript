@@ -1,5 +1,5 @@
-s Please input a number
 #This is a sample bscript program which decides whether a given integer is a prime number
+s Please input a number
 n
 i 1
 a2 2
